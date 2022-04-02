@@ -299,7 +299,7 @@ export const RegularButton = (props) => {
         {children}
       </div>
       )}
-      {icon.enabled && (<AFIcon color={buttonTypes[type].color || buttonTypes.primary.color} {...icon} />)}
+      {icon.enabled && (<SAIcon color={buttonTypes[type].color || buttonTypes.primary.color} {...icon} />)}
     </Button>
   );
 };

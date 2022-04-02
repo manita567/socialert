@@ -1,5 +1,9 @@
 import { Box } from '@mui/material'
 import React from 'react'
+import {
+  RegularButton,
+} from "../components/custom/buttons"
+
 
 export const ParentToCard = (props) => {
   const { children, window } = props
@@ -8,12 +12,15 @@ export const ParentToCard = (props) => {
 }
 
 export const Card = ({ text, children }) => {
-  return (
+  return ( 
+    <>
     <Box
       sx={{
         width: {
           xs: 200,
-          md: 500
+          md: 500,
+          lg: 500,
+          xl: 1000,
         },
         height: 469,
         flexGrow: 0,
@@ -29,6 +36,13 @@ export const Card = ({ text, children }) => {
       {text}
       {children}
     </Box>
+    <RegularButton
+      icon={{enabled: true, type:'close'}}
+    >
+        Hello world
+      </RegularButton>
+    </>
+      
   )
 }
 export default Card

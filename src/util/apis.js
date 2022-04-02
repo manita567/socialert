@@ -58,7 +58,7 @@ export const getAuthToken = async()=> {}
 export const getAuthSession = async()=> {}
 
 // const serverURL = `http://localhost:${process.env.SERVER_PORT}/${process.env.API_URL}`; 
-const serverURL =  `http://localhost:3001/api`; 
+const serverURL =  `http://localhost:3001/.netlify/functions/server`; 
 
 //**MVP */
 // ========================================================================== //
@@ -86,7 +86,7 @@ export const getUsers = async ({ query }) => {
     proxy: false,//breaks usage with localhost development
     headers: {
       ...commonHeaders, many: true,
-      POST: 'http://localhost:3001 /.netlify/functions/server/api/getUser HTTP/1.1', 
+      POST: `${serverURL}/getUser`, 
     },
     body: {
       

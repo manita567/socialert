@@ -130,7 +130,7 @@
 
 [dev]
   command = "npm run develop" # Command to start your dev server **cannot be ndevelop, otherwise its stuck in an infinite loop**
-  functionsPort = 3001 # Port to run your functions on (the server)
+  functionsPort = 3000 # Port to run your functions on (the server)
   targetPort = 3000 # The port for your application server, framework or site generator
   port = 3001 # The port that the netlify dev will be accessible on
   publish = "public" # The path to your static content folder

@@ -54,7 +54,6 @@ app.use(limiter) //  apply to all requests
 
 
 
-
 // ========================================================================== //
 // Sockets **for live-chat features**
 // ========================================================================== //
@@ -485,6 +484,9 @@ if (process.env.NODE_ENV === "development")
 // ========================================================================== //
 router.get('/api/getUser', async (req, res) => {
   const { query,headers} = req
+  
+  console.log(query)
+
 
   connecToMongo('socialert', (db) => {
     const collection = db.collection('users') //get user collection 
@@ -578,14 +580,13 @@ router.post('/api/createUser', async (req, res) => {
   })
 })
 
-
 // ========================================================================== //
 // to insert data, we use body
 // ========================================================================== // 
 router.delete('/api/deleteUser', async (req, res) => {
   const { query,headers } = req
   
-  if (!query) res.send({
+  if (!query && query === {}) res.send({
     statusCode: 500,
     body: 'you must pass in a query, or else you will drop the entire collection!!!',
   })
